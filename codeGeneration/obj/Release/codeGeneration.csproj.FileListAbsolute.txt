@@ -1,0 +1,20 @@
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Release\codeGeneration.exe.config
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Release\codeGeneration.exe
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Release\codeGeneration.pdb
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.MainForm.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.Properties.Resources.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.WriteLinkInfoForm.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.csproj.GenerateResource.Cache
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.exe
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.pdb
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Release\codeGeneration.csprojResolveAssemblyReference.cache
+D:\software\source Code\codeGeneration\codeGeneration\bin\Release\codeGeneration.exe.config
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.exe
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.pdb
+D:\software\source Code\codeGeneration\codeGeneration\bin\Release\codeGeneration.exe
+D:\software\source Code\codeGeneration\codeGeneration\bin\Release\codeGeneration.pdb
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.csprojResolveAssemblyReference.cache
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.MainForm.resources
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.Properties.Resources.resources
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.WriteLinkInfoForm.resources
+D:\software\source Code\codeGeneration\codeGeneration\obj\Release\codeGeneration.csproj.GenerateResource.Cache

@@ -1,0 +1,11 @@
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Debug\codeGeneration.exe.config
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Debug\codeGeneration.exe
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Debug\codeGeneration.pdb
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.Properties.Resources.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.csproj.GenerateResource.Cache
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.exe
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.pdb
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.MainForm.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.WriteLinkInfoForm.resources
+E:\项目\codeGeneration\codeGeneration\codeGeneration\obj\Debug\codeGeneration.csprojResolveAssemblyReference.cache
+E:\项目\codeGeneration\codeGeneration\codeGeneration\bin\Debug\MySql.Data.dll
