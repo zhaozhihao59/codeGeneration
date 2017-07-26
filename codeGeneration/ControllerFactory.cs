@@ -51,6 +51,7 @@ namespace codeGeneration
             sb.Append("import ").Append("java.util.Map;").Append("\r\n");
             sb.Append("import ").Append("java.util.List;").Append("\r\n");
             sb.Append("import ").Append("javax.annotation.Resource;").Append("\r\n");
+            sb.Append("import ").Append("org.springframework.context.annotation.Scope;").Append("\r\n");
             sb.Append("import ").Append("javax.servlet.http.HttpServletRequest;").Append("\r\n");
             sb.Append("import ").Append("javax.servlet.http.HttpServletResponse;").Append("\r\n");
             sb.Append("import ").Append("javax.servlet.http.HttpSession;").Append("\r\n");
@@ -71,15 +72,10 @@ namespace codeGeneration
             sb.Append("import ").Append(basePackage).Append(".model.").Append(className).Append("Form;").Append("\r\n\r\n");
 
 
-            //sb.Append("/**").Append("\r\n");
-            //sb.Append(" * ").Append(comment).Append("\r\n");
-            //sb.Append(" * @creator 赵志豪\r\n");
-            //sb.Append(" * @create-time ").Append(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")).Append("\r\n");
-            //sb.Append(" * @email ").Append("490875647@qq.com").Append("\r\n");
-            //sb.Append(" * @version 1.0").Append("\r\n");
-            //sb.Append(" */").Append("\r\n");
+            
             String lastMappingName =   mapping.Substring(mapping.LastIndexOf("/"));
             sb.Append("@Controller(\"" + firstClassName + "Controller\")").Append("\r\n");
+            sb.Append("@Scope(\"prototype\")").Append("\r\n");
             sb.Append("@Api(value = ").Append("\""+lastMappingName+"\" , description = ").Append("\""+comment+"\")").Append("\r\n");
             sb.Append("@RequestMapping(\""+mapping+"\")").Append("\r\n");
             sb.Append("public class ").Append(className).Append("Controller extends BaseController {").Append("\r\n\r\n");
@@ -95,6 +91,7 @@ namespace codeGeneration
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t@RequestMapping(value = \"/listDataByPage\", method = RequestMethod.GET)").Append("\r\n");
             sb.Append("\t@ApiOperation(value = ").Append("\"查询" + comment + "\")").Append("\r\n");
+            sb.Append("\t@ResponseBody").Append("\r\n");
             sb.Append("\t").Append("public Response listDataByPage(@ModelAttribute " + className + "Model model){").Append("\r\n");
             
             sb.Append("\t\t").Append(firstClassName).Append("Service.list").Append(className).Append("ByPage(model);").Append("\r\n");
@@ -112,6 +109,7 @@ namespace codeGeneration
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t@ApiOperation(value = ").Append("\"保存" + comment + "\")").Append("\r\n");
             sb.Append("\t@RequestMapping(value = \"/save\", method = RequestMethod.PUT)").Append("\r\n");
+            sb.Append("\t@ResponseBody").Append("\r\n");
             sb.Append("\tpublic Response save(@ModelAttribute " + className + "Entity model){").Append("\r\n");
             sb.Append("\t\t").Append("if(null == model.getId()){").Append("\r\n");
             sb.Append("\t\t\t").Append(firstClassName).Append("Service.add(model);").Append("\r\n");
@@ -130,6 +128,7 @@ namespace codeGeneration
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t@ApiOperation(value = ").Append("\"删除" + comment + "\")").Append("\r\n");
             sb.Append("\t@RequestMapping(value = \"/del\", method = RequestMethod.DELETE)").Append("\r\n");
+            sb.Append("\t@ResponseBody").Append("\r\n");
             sb.Append("\tpublic Response del(@ModelAttribute " + className + "Model model){").Append("\r\n");
             sb.Append("\t\t").Append("if(model.getSelIds() == null || model.getSelIds().size() == 0)").Append("\r\n");
             sb.Append("\t\t\t").Append("throw new ServiceException(UpCoopExceptionCode.SYSTEM_ERROR)").Append("\r\n");

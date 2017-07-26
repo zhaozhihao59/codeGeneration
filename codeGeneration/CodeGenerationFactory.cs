@@ -85,8 +85,10 @@ namespace codeGeneration
         {
             //生成controller
             ControllerFactory.createController(path + "\\controller", package + ".controller",package,row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
+            //生成vo对象
+            VoFactory.createVo(path + "\\controller\\vo", package + ".controller.vo", package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(),row.Cells["className"].Value.ToString(), dt);
             //生成dto
-            DtoFactory.createDto(path + "\\model", package + ".model",package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
+            DtoFactory.createDto(path + "\\dto", package + ".dto",package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
             //生成dao
             DaoFactory.createDao(path + "\\dao", package + ".dao",package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
             ////生成form
@@ -99,8 +101,7 @@ namespace codeGeneration
             ServiceFactory.createService(path + "\\service", package + ".service",package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
             //生成serviceImpl
             ServiceImplFactory.createServiceImpl(path + "\\service\\impl", package + ".service.impl",package, row.Cells["tableName"].Value.ToString(), row.Cells["tableComment"].Value.ToString(), row.Cells["className"].Value.ToString(), dt);
-
-            //生成sqlmap-config
+            
 
         }
         public static void javaCodeFactory(string path, string package, DataGridViewRow dataGridViewRow, DataGridViewRowCollection rows)

@@ -24,7 +24,7 @@ namespace codeGeneration
 
             sb.Append("import ").Append(packageComBase).Append("base.page.PageResult;").Append("\r\n");
             sb.Append("import ").Append(basePackage).Append(".entity.").Append(className).Append(";").Append("\r\n");
-            sb.Append("import ").Append(basePackage).Append(".dto.").Append(className).Append("Condition;").Append("\r\n");
+            sb.Append("import ").Append(basePackage).Append(".dto.").Append(className).Append("Dto;").Append("\r\n");
             //sb.Append("/**").Append("\r\n");
             //sb.Append(" * ").Append(comment).Append("\r\n");
             //sb.Append(" * @creator 赵志豪\r\n");
@@ -40,13 +40,20 @@ namespace codeGeneration
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t").Append("List<").Append(className).Append("> list" + className + "All();").Append("\r\n\r\n");
 
+
+            //根据条件查询
+            sb.Append("\t/**").Append("\r\n");
+            sb.Append("\t * 根据条件查询").Append(comment).Append("\r\n");
+            sb.Append("\t */").Append("\r\n");
+            sb.Append("\t").Append("List<").Append(className).Append("> list" + className + "ByCondition").Append("(" + className + "Dto condition);").Append("\r\n\r\n");
+
             //查询总数
             sb.Append("\t/**").Append("\r\n");
             sb.Append("\t * 查询总数").Append("\r\n");
             sb.Append("\t *").Append("@param condition 查询条件类").Append("\r\n");
             sb.Append("\t *").Append("@return 总条数").Append("\r\n");
             sb.Append("\t */").Append("\r\n");
-            sb.Append("\t").Append("int get" + className + "ByPageCount").Append("("+className + "Model condition);").Append("\r\n\r\n");
+            sb.Append("\t").Append("int get" + className + "ByPageCount").Append("("+className + "Dto condition);").Append("\r\n\r\n");
             //分页方法
 
             sb.Append("\t/**").Append("\r\n");
@@ -55,7 +62,7 @@ namespace codeGeneration
             sb.Append("\t *").Append("@param condition 查询条件类").Append("\r\n");
             sb.Append("\t *").Append("@return 总条数").Append("\r\n");
             sb.Append("\t */").Append("\r\n");
-            sb.Append("\t").Append("void list").Append(className).Append("ByPage(").Append(className).Append("Model condition);").Append("\r\n\r\n");
+            sb.Append("\t").Append("void list").Append(className).Append("ByPage(").Append(className).Append("Dto condition);").Append("\r\n\r\n");
 
 
 

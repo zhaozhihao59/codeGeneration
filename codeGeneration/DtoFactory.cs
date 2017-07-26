@@ -16,9 +16,6 @@ namespace codeGeneration
             StringBuilder sb = new StringBuilder();
             sb.Append("package ").Append(package).Append(";").Append("\r\n\r\n");
             sb.Append("import ").Append("java.io.Serializable;").Append("\r\n");
-            sb.Append("import ").Append("io.swagger.annotations.ApiModel;").Append("\r\n");
-            
-            sb.Append("import ").Append("io.swagger.annotations.ApiModelProperty;").Append("\r\n\r\n");
             
             //sb.Append("/**").Append("\r\n");
             //sb.Append(" * ").Append(comment).Append("\r\n");
@@ -27,27 +24,26 @@ namespace codeGeneration
             //sb.Append(" * @email ").Append("490875647@qq.com").Append("\r\n");
             //sb.Append(" * @version 1.0").Append("\r\n");
             //sb.Append(" */").Append("\r\n");
-            sb.Append("@ApiModel").Append("\r\n");
-            sb.Append("public class ").Append(className).Append("Model extends BaseModel<"+className+">").Append(" implements Serializable {").Append("\r\n");
+            
+            sb.Append("public class ").Append(className).Append("Dto extends BaseDto<"+className+">").Append(" implements Serializable {").Append("\r\n");
             sb.Append("\t").Append("private static final long serialVersionUID = 7904053207325003853L;").Append("\r\n\r\n");
             foreach (DataRow row in dt.Rows) {
                 string dataTypeResult = DataTypeMapping.getDataType(row["dataType"].ToString());
-                if(dataTypeResult == "String"){
+                //if(dataTypeResult == "String"){
                     string fieldName = row["fieldName"].ToString();
                     string firstFieldName = fieldName.Substring(0,1).ToLower() + fieldName.Substring(1);
                     
                     sb.Append("\t").Append("/** ").Append(row["comment"].ToString()).Append(" */").Append("\r\n");
-                    sb.Append("\t").Append("@ApiModelProperty(value = ").Append("\"" + row["comment"].ToString() + "\")").Append("\r\n");
                     sb.Append("\t").Append("private ").Append(dataTypeResult).Append(" ").Append(firstFieldName).Append(";").Append("\r\n"); ;
-                }
+                //}
             }
             sb.Append("\r\n");
             //get set 封装
             foreach (DataRow row in dt.Rows)
             {
                 string dataTypeResult = DataTypeMapping.getDataType(row["dataType"].ToString());
-                if (dataTypeResult == "String")
-                {
+                //if (dataTypeResult == "String")
+                //{
                     string fieldName = row["fieldName"].ToString();
                     string firstFieldName = fieldName.Substring(0, 1).ToLower() + fieldName.Substring(1);
                     //get
@@ -61,10 +57,10 @@ namespace codeGeneration
                     sb.Append("\t").Append("public ").Append("void").Append(" set").Append(fieldName).Append("(String ").Append(firstFieldName).Append("){").Append("\r\n");
                     sb.Append("\t\t").Append("this.").Append(firstFieldName).Append(" = ").Append(firstFieldName).Append(";").Append("\r\n");
                     sb.Append("\t").Append("}").Append("\r\n\r\n");
-                }
+                //}
             }
             sb.Append("}");
-            CodeGenerationFactory.write(path + "\\" + className + "Model.java",path,sb.ToString());
+            CodeGenerationFactory.write(path + "\\" + className + "Dto.java",path,sb.ToString());
 
         }
     }

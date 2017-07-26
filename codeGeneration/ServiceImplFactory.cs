@@ -27,7 +27,7 @@ namespace codeGeneration
             sb.Append("import ").Append(packageComBase).Append("base.page.PageResult;").Append("\r\n");
             sb.Append("import ").Append(basePackage).Append(".service.").Append("I").Append(className).Append("Service;").Append("\r\n");
             sb.Append("import ").Append(basePackage).Append(".entity.").Append(className).Append(";").Append("\r\n");
-            sb.Append("import ").Append(basePackage).Append(".dto.").Append(className).Append("Condition;").Append("\r\n");
+            sb.Append("import ").Append(basePackage).Append(".dto.").Append(className).Append("Dto;").Append("\r\n");
             sb.Append("import ").Append(basePackage).Append(".dao.").Append("I").Append(className).Append("Dao;").Append("\r\n");
             //sb.Append("/**").Append("\r\n");
             //sb.Append(" * ").Append(comment).Append("\r\n");
@@ -50,6 +50,14 @@ namespace codeGeneration
             sb.Append("\t\t").Append("return ").Append(firstClassName).Append("Dao.list").Append(className).Append("All();").Append("\r\n");
             sb.Append("\t").Append("}").Append("\r\n\r\n");
 
+            //根据条件查询
+            sb.Append("\t/**").Append("\r\n");
+            sb.Append("\t * 根据条件查询").Append(comment).Append("\r\n");
+            sb.Append("\t */").Append("\r\n");
+            sb.Append("\t@Override").Append("\r\n");
+            sb.Append("\t").Append("public ").Append("List<").Append(className).Append("> list" + className + "ByCondition").Append("(" + className + "Dto condition){").Append("\r\n");
+            sb.Append("\t\t").Append("return ").Append(firstClassName).Append("Dao.list").Append(className).Append("ByPage(condition,null);").Append("\r\n");
+            sb.Append("\t}").Append("\r\n");
 
             //查询总数
             sb.Append("\t/**").Append("\r\n");
@@ -58,7 +66,7 @@ namespace codeGeneration
             sb.Append("\t *").Append("@return 总条数").Append("\r\n");
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t@Override").Append("\r\n");
-            sb.Append("\t").Append("public int get" + className + "ByPageCount").Append("(" + className + "Model condition){").Append("\r\n");
+            sb.Append("\t").Append("public int get" + className + "ByPageCount").Append("(" + className + "Dto condition){").Append("\r\n");
             sb.Append("\t\t").Append("return ").Append(firstClassName).Append("Dao.get").Append(className).Append("ByPageCount(condition);").Append("\r\n");
             sb.Append("\t").Append("}").Append("\r\n\r\n");
 
@@ -69,7 +77,7 @@ namespace codeGeneration
             sb.Append("\t *").Append("@param condition 查询条件类").Append("\r\n");
             sb.Append("\t */").Append("\r\n");
             sb.Append("\t@Override").Append("\r\n");
-            sb.Append("\t").Append("public void list").Append(className).Append("ByPage(").Append(className).Append("Model condition){").Append("\r\n");
+            sb.Append("\t").Append("public void list").Append(className).Append("ByPage(").Append(className).Append("Dto condition){").Append("\r\n");
             sb.Append("\t\t").Append("int rows = ").Append(firstClassName).Append("Dao.get").Append(className).Append("ByPageCount(condition);").Append("\r\n");
             sb.Append("\t\t").Append("pageResult.setRows(rows);").Append("\r\n");
             sb.Append("\t\t").Append("RowBounds rowBounds = new RowBounds(condition.pageResult.getCurrentPageIndex(),condition.pageResult.getPageSize());").Append("\r\n");
